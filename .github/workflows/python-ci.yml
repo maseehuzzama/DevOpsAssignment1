@@ -39,7 +39,10 @@ jobs:
             unzip -q sonar-scanner-cli.zip
             rm sonar-scanner-cli.zip
             mv sonar-scanner-4.6.2.2472-linux sonar-scanner
-
+      - name: Set JAVA_HOME
+        run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV
+            
       - name: Run SonarCloud Analysis
         run: |
+            export JAVA_HOME=$JAVA_HOME
             sonar-scanner/bin/sonar-scanner -Dproject.settings=sonar-project.properties
