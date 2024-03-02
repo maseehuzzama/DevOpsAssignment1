@@ -40,6 +40,6 @@ jobs:
             rm sonar-scanner-cli.zip
             mv sonar-scanner-4.6.2.2472-linux sonar-scanner
 
-            - name: Run SonarCloud Analysis
-              run: |
-                sonar-scanner/bin/sonar-scanner -Dproject.settings=sonar-project.properties
+      - name: Run SonarCloud Analysis
+        run: |
+            sonar-scanner/bin/sonar-scanner -Dproject.settings=sonar-project.properties
