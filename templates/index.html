@@ -6,7 +6,7 @@
     <title>Task Manager</title>
 </head>
 <body>
-    <h1>Task Manager</h1>
+    <h1>Welcome to Task Manager</h1>
     <ul>
         {% for task in tasks %}
         <li>{{ task.name }} - {{ task.description }} <button onclick="deleteTask({{ task.id }})">Delete</button></li>
